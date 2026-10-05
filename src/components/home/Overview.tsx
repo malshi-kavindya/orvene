@@ -1,0 +1,5 @@
+﻿import { ArrowRight } from "lucide-react";
+import { Eyebrow } from "../shared/Eyebrow";
+
+export function Overview() { return <section className="overview section-paper"><div className="container overview-grid"><div className="overview-statement"><Eyebrow>THE PROBLEM</Eyebrow><h2>Research should be connected, <em>not scattered.</em></h2><p className="large-copy">The best insight is rarely hiding in a single document. It lives between sources, conversations, evidence, and the decisions made along the way.</p><a href="#features" className="text-link">See how Orvene connects the dots <ArrowRight size={16} /></a></div><div className="overview-aside"><img src="/the-prob.png" alt="Research context scattered across disconnected tools" className="prob-image" /><div className="outcomes"><div><strong>01</strong><span>Centralized<br />research activity</span></div><div><strong>02</strong><span>Traceable<br />evidence</span></div><div><strong>03</strong><span>Connected<br />findings</span></div></div></div></div></section>; }
+
