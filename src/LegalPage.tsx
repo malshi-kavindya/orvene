@@ -1,0 +1,7 @@
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Footer, Header } from './shell';
+import type { LegalDoc } from './legal';
+
+export function LegalPage({ doc }: { doc: LegalDoc }) {
+  return <><Header /><main className="legal-page"><section className="legal-hero section-dark"><div className="container"><span className="legal-eyebrow">{doc.eyebrow}</span><h1>{doc.title}</h1><p>{doc.lede}</p><div className="legal-updated">{doc.updated}</div></div></section><section className="legal-body section-paper"><div className="container legal-grid"><aside className="legal-toc"><h4>Sections</h4>{doc.sections.map((section) => <a key={section.no} href={`#section-${section.no}`}>{section.no} {section.heading}</a>)}<a className="text-link legal-toc-link" href="/#contact">Questions? Talk to us <ArrowRight size={16} /></a></aside><article>{doc.sections.map((section) => <section className="legal-section" id={`section-${section.no}`} key={section.no}><h3><span>{section.no}</span>{section.heading}</h3>{section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.bullets && <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}</section>)}<div className="legal-cta"><p>These documents are a starting point, not legal advice — have counsel review them before you rely on them.</p><a className="text-link" href="/#contact">Ask a question <ArrowUpRight size={16} /></a></div></article></div></section></main><Footer /></>;
+}
